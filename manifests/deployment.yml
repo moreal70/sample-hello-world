@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "azhskubernetescluster01-3a75"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "azhskubernetescluster01-3a75"
+  template:
+    metadata:
+      labels:
+        app: "azhskubernetescluster01-3a75"
+    spec:
+      containers:
+        - name: "azhskubernetescluster01-3a75"
+          image: "azhscr01.azurecr.io/azhskubernetescluster01"
+          ports:
+          - containerPort: 2222
